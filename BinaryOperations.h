@@ -1,9 +1,9 @@
 #pragma once
+#include <iostream>
+#include <sstream>
 #include <ostream>
 #include <cmath>
 using namespace std;
-
-//I'm losing my mind trying to understand what to do. welcome to the ordered chaos in my brain.
 
 class BinaryOperations {
 
@@ -13,7 +13,7 @@ class BinaryOperations {
         BinaryOperations(int);
         float operator + (BinaryOperations b);
         float operator - (BinaryOperations b);
-        friend ostream& operator<<(ostream &, const BinaryOperations&);
+        friend ostream& operator <<(ostream & os, float BinaryOperations);
 
     private:
         float nibble;
@@ -32,15 +32,10 @@ BinaryOperations::BinaryOperations(string input) {
 
 BinaryOperations::BinaryOperations(int imp) {
     int end = 0;
-    int num = 10;
     int copy = imp;
-    for (int i = 0; i < imp of (log10(number) + 1); i++) {
-        int cop = copy % num;
-        if (cop = 1) {
-            end += (1 ^ (2 ^ i));
-            copy -= copy % num;
-        }
-        num *= 10;
+    while (copy > 0) {
+        end += copy % 10;
+        copy /= 10;
     }
     nibble = end;
 }
