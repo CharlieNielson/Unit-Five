@@ -5,47 +5,16 @@
 #include <cmath>
 using namespace std;
 
-class BinaryOperations {
+class operations {
 
     public:
-        BinaryOperations();//default
-        BinaryOperations(string);
-        BinaryOperations(int);
-        float operator + (BinaryOperations b);
-        float operator - (BinaryOperations b);
-        friend ostream& operator <<(ostream & os, float BinaryOperations);
+        operations();//default
+        operations(string);
+        operations(int);
+        int addition(int, int);
+        int subtraction(int, int);
+        friend ostream& operator <<(ostream & os, float operations);
 
     private:
-        float nibble;
+        int nibble;
 };
-
-BinaryOperations::BinaryOperations() {
-    nibble = 0;
-    cout << "default\n";
-}
-
-BinaryOperations::BinaryOperations(string input) {
-    int end = 0;
-    // WIP
-    nibble = end;
-}
-
-BinaryOperations::BinaryOperations(int imp) {
-    int end = 0;
-    int copy = imp;
-    while (copy > 0) {
-        end += copy % 10;
-        copy /= 10;
-    }
-    nibble = end;
-}
-
-float BinaryOperations BinaryOperations::operator +(float BinaryOperations other) {
-    float end = nibble + other.nibble;
-    return end;
-}
-
-float BinaryOperations BinaryOperations::operator -(float BinaryOperations other) {
-    float end = nibble - other.nibble;
-    return end;
-}
